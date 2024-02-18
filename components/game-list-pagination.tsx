@@ -29,7 +29,7 @@ const GameListPagination = ({
   const prevPage = page > 1 ? page - 1 : page;
 
   return (
-    <Pagination className={cn("text-primary flex", className)}>
+    <Pagination className={cn("text-primary", className)}>
       <PaginationContent>
         {hasPrevious && (
           <PaginationItem>

@@ -16,13 +16,15 @@ const GameCard = ({ game }: { game: Record<string, any> }) => {
     <Link key={game.id} href={`/game/${game.id}`}>
       <Card className="border-none bg-[#161616] hover:scale-105 transition-all col-span-1 flex justify-between flex-col h-full">
         <CardHeader className="p-0">
-          <div className="relative h-full max-h-52 md:min-h-36 w-full ">
+          <div className="relative h-full min-h-36 w-full ">
             <Image
               src={game.background_image}
               alt={game.name}
-              fill
+              height={0}
+              width={0}
+              quality={50}
               sizes="100vw"
-              className="rounded-t-2xl object-cover object-center"
+              className="rounded-t-2xl h-36 w-full object-cover object-center"
             />
           </div>
         </CardHeader>

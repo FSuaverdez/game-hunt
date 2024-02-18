@@ -8,7 +8,7 @@ const GameCardLoading = () => {
   return (
     <Card className="border-none bg-[#161616] transition-all col-span-1 flex justify-between flex-col h-full">
       <CardHeader className="p-0">
-        <div className="relative h-full max-h-52 md:min-h-36 w-full ">
+        <div className="relative h-full min-h-36 w-full ">
           <Skeleton className="rounded-t-2xl object-cover object-center min-h-36 h-full" />
         </div>
       </CardHeader>

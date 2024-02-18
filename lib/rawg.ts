@@ -64,12 +64,12 @@ export const searchGames = async (
   const response = await rawgAxios.get("/games", {
     params: {
       search: query,
-      page_size: 20,
+      page_size: pageSize,
       page: page,
     },
   });
 
-  return response.data.results;
+  return response.data;
 };
 
 export const getGameScreenshots = async (id: string) => {

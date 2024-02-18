@@ -28,7 +28,7 @@ export default function Trending({
       </div>
       <div className="mt-5">
         <Suspense
-          fallback={<GamesListLoading />}
+          fallback={<GamesListLoading numberOfGames={12} />}
           key={searchParams?.page as string}
         >
           <TopGamesList page={Number(searchParams?.page) || 1} />
