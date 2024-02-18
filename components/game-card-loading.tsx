@@ -6,10 +6,10 @@ import { Skeleton } from "./ui/skeleton";
 
 const GameCardLoading = () => {
   return (
-    <Card className="border-none bg-[#161616] hover:scale-105 transition-all col-span-1 flex justify-between flex-col h-full">
+    <Card className="border-none bg-[#161616] transition-all col-span-1 flex justify-between flex-col h-full">
       <CardHeader className="p-0">
-        <div className="relative h-full min-h-52 md:min-h-40 w-full ">
-          <Skeleton className="rounded-t-2xl object-cover object-center min-h-40 h-full" />
+        <div className="relative h-full max-h-52 md:min-h-36 w-full ">
+          <Skeleton className="rounded-t-2xl object-cover object-center min-h-36 h-full" />
         </div>
       </CardHeader>
       <CardContent className="p-4 h-full flex flex-col justify-between">

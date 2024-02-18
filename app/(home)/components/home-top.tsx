@@ -10,7 +10,6 @@ import GameCard from "@/components/game-card";
 const tektur = Tektur({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
 });
 
 const HomeTop = async () => {
@@ -19,7 +18,7 @@ const HomeTop = async () => {
   return (
     <div className="flex flex-col justify-center gap-y-4">
       <Link
-        href="/trending"
+        href="/top-games"
         className={cn(
           "text-2xl lg:text-3xl font-bold flex justify-center items-center gap-x-4 cursor-pointer w-fit hover:gap-x-8 transition-all",
           tektur.className

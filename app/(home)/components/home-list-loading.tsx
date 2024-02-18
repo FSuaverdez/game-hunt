@@ -9,7 +9,6 @@ import GameCardLoading from "@/components/game-card-loading";
 const tektur = Tektur({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
 });
 
 const HomeListLoading = async ({

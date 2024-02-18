@@ -10,7 +10,6 @@ import GameCard from "@/components/game-card";
 const tektur = Tektur({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
 });
 
 const HomeTrending = async () => {

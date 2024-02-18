@@ -8,7 +8,6 @@ import HomeListLoading from "./components/home-list-loading";
 const tektur = Tektur({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
 });
 
 export default function Home() {
