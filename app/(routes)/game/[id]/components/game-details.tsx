@@ -57,7 +57,7 @@ const GameDetails = async ({ id }: GameDetailsProps) => {
             <Badge>
               <Star className="inline-block w-4 h-4" fill="white" />
               <span className="font-bold ml-1">
-                {game.rating}/{game?.rating_top}
+                {game.rating} / {game?.rating_top}
               </span>
             </Badge>
           </div>
@@ -83,7 +83,7 @@ const GameDetails = async ({ id }: GameDetailsProps) => {
         )}
         <div
           className={cn(
-            "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all",
+            "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all mt-10",
             tektur.className
           )}
         >

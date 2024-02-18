@@ -50,7 +50,8 @@ const GameScreenShots = async ({ id }: GameScreenShotsProps) => {
                       alt={`Screenshot-${index}`}
                       width={0}
                       height={0}
-                      sizes="100vw"
+                      sizes="15vw"
+                      quality={50}
                       className="rounded-2xl object-cover object-center w-full h-60 min-w-96"
                     />
                   </Link>

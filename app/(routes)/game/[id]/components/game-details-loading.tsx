@@ -10,7 +10,7 @@ const GameDetailsLoading = async () => {
           <Skeleton className="h-8 w-20" />
         </div>
 
-        <div className="mt-2">
+        <div className="mt-10">
           <Skeleton className="h-8 w-20" />
           <Skeleton className="h-52 w-full mt-2" />
         </div>
