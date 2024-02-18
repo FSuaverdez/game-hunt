@@ -3,19 +3,11 @@ import GameListPagination from "@/components/game-list-pagination";
 import { searchGames } from "@/lib/rawg";
 
 interface SearchGamesListProps {
-  page: number;
   query: string;
 }
 
-const SearchGamesList = async ({ page, query }: SearchGamesListProps) => {
-  if (!page) {
-    page = 1;
-  }
-
-  if (!page) {
-    return;
-  }
-  const { results } = await searchGames(query, page, 12);
+const SearchGamesList = async ({ query }: SearchGamesListProps) => {
+  const { results } = await searchGames(query, 1, 12);
 
   return (
     <div>

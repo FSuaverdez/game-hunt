@@ -64,8 +64,10 @@ export const searchGames = async (
   const response = await rawgAxios.get("/games", {
     params: {
       search: query,
+      search_precise: true,
       page_size: pageSize,
       page: page,
+      ordering: "-added",
     },
   });
 

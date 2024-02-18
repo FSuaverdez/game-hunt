@@ -14,7 +14,7 @@ const tektur = Tektur({
 export default function Search({
   searchParams,
 }: {
-  searchParams: { q: string; page: string };
+  searchParams: { q: string };
 }) {
   return (
     <div className="px-2 md:px-6 lg:px-10 min-h-screen pt-10">
@@ -30,12 +30,9 @@ export default function Search({
       <div className="mt-5">
         <Suspense
           fallback={<GamesListLoading numberOfGames={8} />}
-          key={searchParams?.page as string}
+          key={searchParams?.q as string}
         >
-          <SearchGamesList
-            query={searchParams?.q || ""}
-            page={Number(searchParams?.page) || 1}
-          />
+          <SearchGamesList query={searchParams?.q || ""} />
         </Suspense>
       </div>
     </div>
