@@ -16,7 +16,6 @@ export default function Search({
 }: {
   searchParams: { q: string; page: string };
 }) {
-  console.log(searchParams);
   return (
     <div className="px-2 md:px-6 lg:px-10 min-h-screen pt-10">
       <div
