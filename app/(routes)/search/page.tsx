@@ -11,6 +11,13 @@ const tektur = Tektur({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+export async function generateMetadata() {
+  return {
+    title: `Search Games - GameHunt`,
+    description: `GameHunt is a website that allows you to search for games, find trending games, and see the top games of all time. Explore the gaming world with GameHunt.`,
+  };
+}
+
 export default function Search({
   searchParams,
 }: {
