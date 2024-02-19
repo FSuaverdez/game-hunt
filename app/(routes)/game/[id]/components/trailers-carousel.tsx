@@ -44,18 +44,9 @@ const TrailersCarousel = ({ trailers }: TrailersCarouselProps) => {
                   }}
                   playing={activeIndex === index ? true : false}
                   light={trailer?.preview}
-                  fallback={
-                    <div className="relative">
-                      <Image
-                        src={trailer?.preview}
-                        alt={`Trailer-${index}`}
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                        className="rounded-2xl object-cover object-center w-full h-60 min-w-96"
-                      />
-                    </div>
-                  }
+                  onClickPreview={() => {
+                    setActiveIndex(index);
+                  }}
                 />
               </CarouselItem>
             </div>

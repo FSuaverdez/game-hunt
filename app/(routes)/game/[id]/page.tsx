@@ -1,22 +1,11 @@
 import { Suspense } from "react";
 import GameDetails from "./components/game-details";
 import GameDetailsLoading from "./components/game-details-loading";
-import { Metadata, ResolvingMetadata } from "next";
-import { getGame } from "@/lib/rawg";
 
-type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const id = params.id;
-
-  const game = await getGame(id);
-
+export async function generateMetadata() {
   return {
-    title: `${game?.name} - GameHunt`,
-    description: `GameHunt - ${game?.name} ${game?.description}`,
+    title: `GameHunt - Explore the Gaming World`,
+    description: `GameHunt is a website that allows you to search for games, find trending games, and see the top games of all time. Explore the gaming world with GameHunt.`,
   };
 }
 
