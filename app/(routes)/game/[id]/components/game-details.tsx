@@ -1,12 +1,14 @@
 import { Tektur } from "next/font/google";
 import { Star } from "lucide-react";
+import parse from "html-react-parser";
+import { Suspense } from "react";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import { getGame } from "@/lib/rawg";
 import GameTrailers from "./game-trailers";
 import GameScreenShots from "./game-screenshots";
 import { Badge } from "@/components/ui/badge";
-import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const tektur = Tektur({
@@ -72,7 +74,7 @@ const GameDetails = async ({ id }: GameDetailsProps) => {
             )}
           >
             <h3>Release Date:</h3>
-            <h3>
+            <h3 className="text-muted-foreground">
               {new Date(game.released).toLocaleString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -81,15 +83,61 @@ const GameDetails = async ({ id }: GameDetailsProps) => {
             </h3>
           </div>
         )}
+        {game?.website && (
+          <Link
+            href={game.website}
+            className={cn(
+              "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all ",
+              tektur.className
+            )}
+          >
+            <h3>Website:</h3>
+            <h3 className="text-muted-foreground hover:underline hover:text-primary">
+              {game?.website}
+            </h3>
+          </Link>
+        )}
+        {game?.developers?.length > 0 && (
+          <div
+            className={cn(
+              "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all",
+              tektur.className
+            )}
+          >
+            <h3>Developers:</h3>
+            <h3 className="text-muted-foreground">
+              {game?.developers
+                ?.map((developer: Record<string, any>) => developer.name)
+                .join(", ")}
+            </h3>
+          </div>
+        )}
+        {game?.genres?.length > 0 && (
+          <div
+            className={cn(
+              "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all",
+              tektur.className
+            )}
+          >
+            <h3>Genres:</h3>
+            <h3 className="text-muted-foreground">
+              {game?.genres
+                ?.map((genre: Record<string, any>) => genre.name)
+                .join(", ")}
+            </h3>
+          </div>
+        )}
         <div
           className={cn(
-            "text-xl lg:text-2xl font-bold flex justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all mt-10",
+            "text-xl lg:text-2xl font-bold flex flex-col justify-center items-center gap-x-4 w-fit hover:gap-x-8 transition-all mt-5",
             tektur.className
           )}
         >
           <h3>About</h3>
         </div>
-        <p className="mt-2 text-muted-foreground">{game.description_raw}</p>
+        <p className="mt-2 text-muted-foreground description">
+          {parse(game.description)}
+        </p>
         <Suspense
           fallback={
             <div className="flex overflow-hidden gap-x-4 mt-5 gap-y-2 ">

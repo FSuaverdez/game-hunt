@@ -63,3 +63,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.description p {
+  margin-top: 1.5rem;
+}

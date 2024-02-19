@@ -30,34 +30,34 @@ const TrailersCarousel = ({ trailers }: TrailersCarouselProps) => {
 
   if (!isMounted) return null;
   return (
-    <div className="min-h-60 h-full">
-      <Carousel className="h-60">
-        <CarouselContent className="">
-          {trailers?.map((trailer: Record<string, any>, index) => (
-            <div key={trailer.id}>
-              <CarouselItem key={index} className="">
-                <ReactPlayer
-                  url={trailer.data.max}
-                  controls={true}
-                  onPlay={() => {
-                    setActiveIndex(index);
-                  }}
-                  playing={activeIndex === index ? true : false}
-                  light={trailer?.preview}
-                  onClickPreview={() => {
-                    setActiveIndex(index);
-                  }}
-                />
-              </CarouselItem>
-            </div>
-          ))}
-        </CarouselContent>
-        <div className="flex gap-x-10 justify-center mt-10">
-          <CarouselPrevious className="relative inset-0 h-10 w-10 bg-primary" />
-          <CarouselNext className="relative inset-0 h-10 w-10 bg-primary" />
-        </div>
-      </Carousel>
-    </div>
+    <Carousel>
+      <CarouselContent className="">
+        {trailers?.map((trailer: Record<string, any>, index) => (
+          <div key={trailer.id}>
+            <CarouselItem key={index} className="w-96 h-60">
+              <ReactPlayer
+                url={trailer.data.max}
+                controls={true}
+                onPlay={() => {
+                  setActiveIndex(index);
+                }}
+                width={"100%"}
+                height={"100%"}
+                playing={activeIndex === index ? true : false}
+                light={trailer?.preview}
+                onClickPreview={() => {
+                  setActiveIndex(index);
+                }}
+              />
+            </CarouselItem>
+          </div>
+        ))}
+      </CarouselContent>
+      <div className="flex gap-x-10 justify-center mt-10">
+        <CarouselPrevious className="relative inset-0 h-10 w-10 bg-primary" />
+        <CarouselNext className="relative inset-0 h-10 w-10 bg-primary" />
+      </div>
+    </Carousel>
   );
 };
 

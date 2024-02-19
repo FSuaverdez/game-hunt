@@ -47,12 +47,14 @@ const GameScreenShots = async ({ id }: GameScreenShotsProps) => {
                   <Link href={screenshot.image} passHref target="_blank">
                     <Image
                       src={screenshot.image}
+                      blurDataURL="https://i.imgur.com/SlLQ79z.png"
                       alt={`Screenshot-${index}`}
                       width={0}
                       height={0}
-                      sizes="15vw"
+                      sizes="100vw"
                       quality={50}
                       className="rounded-2xl object-cover object-center w-full h-60 min-w-96"
+                      placeholder="blur"
                     />
                   </Link>
                 </CarouselItem>
